@@ -1,0 +1,54 @@
+🥇 Phase 1 — Minimal UEFI “Hello World”
+
+Boot via UEFI and print text using UEFI services.
+No kernel yet.
+
+Manual UEFI struct definitions (no efi.h)
+
+🥈 Phase 2 — Proper kernel handoff (still UEFI)
+
+Split bootloader and kernel.
+
+UEFI:
+loads kernel
+passes system table + memory map
+exits boot services
+
+Kernel:
+starts in 64-bit long mode
+prints using framebuffer or UEFI (temporarily)
+
+🥉 Phase 3 — Framebuffer driver (ditch UEFI output)
+
+Print text without UEFI.
+
+Implement:
+Framebuffer info before exit
+Write pixels directly
+Implement a tiny font renderer
+Clear screen
+Draw character
+Draw string
+Newline handling
+
+🟡 Phase 4 — Memory management (DO NOT SKIP)
+
+Implement:
+Physical memory bitmap
+Page tables (4-level paging)
+Simple heap allocator
+
+🔴 Phase 5 — Interrupts & time
+
+Implement:
+GDT
+IDT
+Timer interrupt
+Keyboard interrupt
+
+🟢 Phase 6 — Shell (text-based)
+
+Minimal shell:
+> help
+> mem
+> reboot
